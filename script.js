@@ -1,3 +1,5 @@
 document.write("今日の日付は");
-scripts.innerHTML = newDate();
+date = newdate();
+console.log(date);
+scripts.innerHTML = date;
 document.write(newDate);
