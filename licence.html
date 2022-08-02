@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  animation-name: show;
+  animation-duration: 0.5s
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: 10% auto;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+@keyframes show {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  padding: 12px;
+  background-color: grey;
+  color: white;
+}
+
+.modal-body {
+  padding: 12px;
+}
+
+.modal-footer {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 12px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 16px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  cursor: pointer;
+}
+    </style>
+    <script>
+        var modal = document.getElementById('demo-modal');
+var btn = document.getElementById('open-modal');
+var close = modal.getElementsByClassName('close')[0];
+
+// When the user clicks the button, open the modal.
+btn.onclick = function() {
+  modal.style.display = 'block';
+};
+
+// When the user clicks on 'X', close the modal
+close.onclick = function() {
+  modal.style.display = 'none';
+};
+
+// When the user clicks outside the modal -- close it.
+window.onclick = function(event) {
+  if (event.target == modal) {
+    // Which means he clicked somewhere in the modal (background area), but not target = modal-content
+    modal.style.display = 'none';
+  }
+};
+    </script>
+</head>
+<body>
+    <button id="open-modal" name="open-modal-btn">Open Modal</button>
+
+<div id="demo-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class='close'>X</span>
+      <h2>Modal Header</h2>
+    </div>
+    <div class="modal-body">
+      <p>
+      なにこれ
+      </p>
+    </div>
+    <div class="modal-footer">
+      <h3>Modal Footer</h3>
+    </div>
+  </div>
+</div>
+</body>
